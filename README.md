@@ -52,98 +52,63 @@ This Python project, "Unicorn Companies Analysis," provides an in-depth examinat
         foundation_year_counts = df['UniYear'].value_counts().sort_index()
         fig = go.Figure(data=[go.Bar(x=foundation_year_counts.index, y=foundation_year_counts.values)])
         
-    e. Top 10 Vehicles by Make -
+    e. Count of Companies per Foundation Year -
     
-        Stacked bar chart
+        Bar chart
         
-        Y-axis = Make
+        foundation_year_counts = df['FoundedOn'].value_counts().sort_index()
+        fig = go.Figure(data=[go.Bar(x=foundation_year_counts.index, y=foundation_year_counts.values)])
         
-        X-axis = Count of DOL Vehicle ID
-        
-        From Filters pane, Apply filter to 'Make' by selecting Filter Type Top N and set value as Count of DOL Vehicle ID.
-        
-    f. Vehicle by CAFV Eligibility -
+    f. Number of Companies per Country -
     
-        Pie chart
+        Line chart
         
-        Legend = CAFV Check
+        country_counts = df['Country'].value_counts().sort_index()
+        fig = go.Figure(data=go.Scatter(x=country_counts.index, y=country_counts.values))
         
-        Values = Count of CAFV Check
-        
-    g. Total Vehicle by State -
+    g. Number of Companies per Continent -
     
-        Shape map
+        Line chart
         
-        Location = State
+        continent_counts = df['Continent'].value_counts().sort_index()
+        fig = go.Figure(data=go.Scatter(x=continent_counts.index, y=continent_counts.values))
         
-        Color Saturation = Count of DOL Vehicle ID
-        
-    h. Vehicle Type Distribution 1 -
+    h. Funding per Industry -
     
-        Donut chart
+        Line chart
         
-        Legend = Electric Type Vehicle Acronym
+        industry_funding = df.groupby('Industry')['Funding(in $ Billions)'].sum().reset_index()
+        fig.add_trace(go.Scatter(x=industry_funding['Industry'], y=industry_funding['Funding(in $ Billions)']))
         
-        Values = Count of Electric Type Vehicle Acronym
-        (Emphasize BEV in this chart)
-        
-        Card
-        
-        Fields = BEV KPI
-        
-        Fields = BEV %age
-        
-    i. Vehicle Type Distribution 2 -
+    i. Valuation per Industry -
     
-        Donut chart
+        Line chart
+  
+        industry_valuation = df.groupby('Industry')['Valuation(in $ Billions)'].sum().reset_index()
+        fig.add_trace(go.Scatter(x=industry_valuation['Industry'], y=industry_valuation['Valuation(in $ Billions)']))
         
-        Legend = Electric Type Vehicle Acronym
-        
-        Values = Count of Electric Type Vehicle Acronym
-        (Emphasize PHEV in this chart)
-        
-        Card
-        
-        Fields = PHEV KPI
-        
-        Fields = PHEV %age
-        
-    j. Filters -
+    j. Top-10 Investors by No. of Companies Invested in-
     
-        1. Electric Utility
-        2. Make
-        3. Model Year
-        4. City
+        investors_count = df_investors['Investors'].value_counts()
+        top_10_investors = investors_count.head(10).reset_index()
+        top_10_investors.columns = ['Investors', 'Frequency']
+  
+        fig = px.bar(top_10_investors, x='Investors', y='Frequency')
 
   
-- Key Metrics and Visualizations:
+- Key Metrics and Insights:
   
-  -The total number of electric vehicles (EVs) in the dataset, with a figure of 150.48K.
-  
-  -Average electric range of the vehicles is 67.88 kms.
-  
-  -BEVs (Battery Electric Vehicles): 117K, which is 77.6% of the total EVs.
-   PHEVs (Plug-in Hybrid Electric Vehicles): 34K, which is 22.4% of the total EVs.
-  
-  -A line chart that shows the growth of EVs from 2010 onwards. The chart highlights significant growth over the years, peaking at 37K in 2023.
-  
-  -A treemap visualization showcasing the top 10 EV models by total number of vehicles. Notable models include:
-  Model Y: 28.50K
-  Model 3: 27.71K
-  LEAF: 13.19K
-  
-  -A bar chart indicating the top vehicle manufacturers by the number of EVs. Tesla leads with 69K vehicles, followed by Nissan with 13K and Chevrolet with 12K.
-  
-  -A pie chart that classifies vehicles based on CAFV eligibility:
-  Unknown (Battery not researched): 17.83K (11.85%)
-  Eligible: 62.95K (41.83%)
-  Not Eligible: 69.7K (46.32%)
-  
-  -A map of the United States highlighting the distribution of EVs across different states, providing a geographical perspective on EV adoption.
+    - Company Valuations and Funding: The dataset includes the current valuations of unicorn companies along with their total funding received. This information is crucial for understanding the financial health and market perception of these companies.
+
+    - Country of Origin and Industry: The analysis identifies the country of origin for each unicorn and categorizes them into different industries. This helps in recognizing geographical and sector-specific trends in the unicorn landscape.
+
+    - Investors: The project highlights key investors who have funded these unicorns, showcasing their role in the growth and success of these companies.
+
+    - Timeline- Founding to Unicorn Status: For each company, the project records the year they were founded and the year they achieved unicorn status. This timeline provides insights into the speed of growth and market dynamics over time.
 
 
 - Usage:
-    This dashboard is designed for stakeholders and enthusiasts in the electric vehicle industry, including policymakers, manufacturers, and consumers. It can help identify trends, compare the performance of different EV models, and understand the impact of EVs in various regions.
+    This project is designed for investors, entrepreneurs, and researchers interested in understanding the dynamics of unicorn companies. It offers valuable insights into investment returns, growth timelines, geographical trends, and key investors in the unicorn landscape.
 
 - Dataset:
     https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=unicorn
