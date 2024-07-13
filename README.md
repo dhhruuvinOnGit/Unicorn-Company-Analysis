@@ -96,7 +96,7 @@ This Python project, "Unicorn Companies Analysis," provides an in-depth examinat
         fig = px.bar(top_10_investors, x='Investors', y='Frequency')
 
   
-- Key Metrics and Insights:
+### Key Metrics and Insights:
   
     - Company Valuations and Funding: The dataset includes the current valuations of unicorn companies along with their total funding received. This information is crucial for understanding the financial health and market perception of these companies.
 
@@ -107,8 +107,8 @@ This Python project, "Unicorn Companies Analysis," provides an in-depth examinat
     - Timeline- Founding to Unicorn Status: For each company, the project records the year they were founded and the year they achieved unicorn status. This timeline provides insights into the speed of growth and market dynamics over time.
 
 
-- Usage:
-    This project is designed for investors, entrepreneurs, and researchers interested in understanding the dynamics of unicorn companies. It offers valuable insights into investment returns, growth timelines, geographical trends, and key investors in the unicorn landscape.
+### Usage:
+This project is designed for investors, entrepreneurs, and researchers interested in understanding the dynamics of unicorn companies. It offers valuable insights into investment returns, growth timelines, geographical trends, and key investors in the unicorn landscape.
 
-- Dataset:
-    https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=unicorn
+### Dataset:
+https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=unicorn
