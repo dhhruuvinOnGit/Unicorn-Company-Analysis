@@ -98,13 +98,13 @@ This Python project, "Unicorn Companies Analysis," provides an in-depth examinat
   
 ### Key Metrics and Insights:
   
-    - Company Valuations and Funding: The dataset includes the current valuations of unicorn companies along with their total funding received. This information is crucial for understanding the financial health and market perception of these companies.
+  - Company Valuations and Funding: The dataset includes the current valuations of unicorn companies along with their total funding received. This information is crucial for understanding the financial health and market perception of these companies.
 
-    - Country of Origin and Industry: The analysis identifies the country of origin for each unicorn and categorizes them into different industries. This helps in recognizing geographical and sector-specific trends in the unicorn landscape.
+  - Country of Origin and Industry: The analysis identifies the country of origin for each unicorn and categorizes them into different industries. This helps in recognizing geographical and sector-specific trends in the unicorn landscape.
 
-    - Investors: The project highlights key investors who have funded these unicorns, showcasing their role in the growth and success of these companies.
+  - Investors: The project highlights key investors who have funded these unicorns, showcasing their role in the growth and success of these companies.
 
-    - Timeline- Founding to Unicorn Status: For each company, the project records the year they were founded and the year they achieved unicorn status. This timeline provides insights into the speed of growth and market dynamics over time.
+  - Timeline- Founding to Unicorn Status: For each company, the project records the year they were founded and the year they achieved unicorn status. This timeline provides insights into the speed of growth and market dynamics over time.
 
 
 ### Usage:
